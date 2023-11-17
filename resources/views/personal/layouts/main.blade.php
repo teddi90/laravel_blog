@@ -54,7 +54,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    @include('admin.includes.sidebar')
+    @include('personal.includes.sidebar')
     @yield('content')
     <!-- Content Wrapper. Contains page content -->
 

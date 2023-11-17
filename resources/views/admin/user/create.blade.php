@@ -29,20 +29,27 @@
                     <form action="{{route('admin.user.store')}}" method="POST" class="w-25">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name"  placeholder="User name">
+                            <input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="User name">
                             @error('name')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="email"  placeholder="Email">
+                            <input type="email" class="form-control" name="email" value="{{old('email')}}"  placeholder="Email">
                             @error('email')
                             <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="password"  placeholder="User name">
-                            @error('password')
+                        <div class="form-group w-50">
+                            <label>Choose role of user</label>
+                            <select name="role" class="form-control">
+                                @foreach($roles as $id => $role)
+                                    <option value="{{$id}}"
+                                        {{$id==old('role_id')? ' selected' : ''}}
+                                    >{{$role}}</option>
+                                @endforeach
+                            </select>
+                            @error('role')
                             <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>
