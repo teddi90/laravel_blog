@@ -50,7 +50,7 @@
                                                                        class="text-success"><i
                                                         class="fas fa-pencil-alt"></i></a></th>
                                             <th class="text-center">
-                                                <form action="{{route('admin.post.delete',$post)}}" method="POST">
+                                                <form action="{{route('personal.liked.delete',$post)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="border-0 bg-transparent">
